@@ -1,0 +1,154 @@
+# class ControllerRig
+
+Class that describes what actions the controllers can take, as well as the actions currently being taken, ranging from jump charge to foot/floor offset.
+
+## Methods
+
+- void ApplyMovement(Vector2 axis, bool inputPressed)
+- void ApplyRotation()
+- void crouchHold(float crouchRate, bool crouchInput = true)
+- (BaseController)[/class-reference/StressLevelZero/Rig/BaseController.md] GetController(Handedness handedness)
+- void Jump() 
+- void JumpCharge(bool chargeInput = true)
+- void JumpEnd();
+- void Jumping();
+- void KnollFilter(Transform filter, Vector3 trackedPos, Quaternion trackedRot, float grip);
+- void LocoDebtPost();
+- Vector2 LocoDebtPre(Vector2 artiDelta);
+- bool MantleGesture(out float mantle);
+- void MoveSpineCrouchOffTowards(float target);
+- void OnAfterFixedUpdate();
+- void OnEarlyUpdate();
+- void OnEnable();
+- void OnFixedUpdate();
+- void OnStart();
+- void OnUpdate();
+- void ProcessLocoMotionThumbStick(Vector2 axis, float minLerp, float maxLerp);
+- void ProcessLocoMotionTouchPad(Vector2 axis, float minLerp, float maxLerp, bool padClicked);
+- void ProcessSecondaryThumbstick(BaseController controller, Vector2 axis);
+- void ProcessSecondaryTouchpad(BaseController controller, Vector2 axis);
+- void QuickMenuLf(bool down = true);
+- void QuickMenuRt(bool down = true);
+- float SecondsFromNow();
+- void SetDirectionMasterTransform(DirectionMode directionMode);
+- void SetTouchPadCurve(CurveMode curveMode);
+- void SmoothRotate(float input);
+- void SnapRotate(BaseController controller, bool inputPressed, float x);
+- void Teleport(Vector3 displace, bool zeroVelocity = false);
+- void TimeInput(bool on);
+- Vector2 TouchPadCurve(Vector2 axis, AnimationCurve curve);
+
+
+## Fields
+
+- int _jumpStage
+- float realDeltaTime 
+- float debtApplierMult 
+- float holdPhysGround 
+- float holdLocoGround 
+- float holdTrackedGround 
+- Vector3 _trackedHeadDelta 
+- Vector3 _lastTrackedHead 
+- Vector2 _artificialDelta 
+- Vector2 _physApplied 
+- Vector2 _locoApplied 
+- Vector2 _trackedApplied 
+- Vector2 _physDebt 
+- Vector2 _locoDebt 
+- Vector2 _trackedDebt 
+- float _jumpCharge 
+- float _timeOfFlight 
+- float _jumpCycle 
+- float _smoothInput 
+- bool _doubleJumpCharged 
+- bool _jumping 
+- HeadSFX _headSfx 
+- bool _timeInput 
+- float _timeInputTimer 
+- bool _chargeInput 
+- bool _crouchHeld 
+- float _crouchLimit 
+- float lastFixedTime 
+- float _spineCrouchOff 
+- ButtonMap jump 
+- ButtonMap menuLf 
+- float _lastFlickTime 
+- Vector2 _doubleFlickMem 
+- Transform rightFilter 
+- Transform leftFilter 
+- float maxDegreesSwing 
+- float maxMillimeters 
+- float _jogCoolTime 
+- float _snapCoolTime 
+- Transform directionMasterTransform 
+- Transform hmdTransform 
+- Transform controllerTransform 
+- Transform CustomDirection 
+- CurveMode curveMode 
+- DirectionMode directionMode 
+- float _crouchTarget 
+- VrVertState vrVertState 
+- float degreesPerSnap 
+- bool _jogToggle 
+- float _rotationDebt 
+- AnimationCurve touchPadCurve 
+- float snapCool 
+- AnimationCurve curve_SmoothDpad 
+- AnimationCurve curve_SmoothGenesis 
+- AnimationCurve curve_Dpad 
+- AnimationCurve curve_Genesis 
+- AnimationCurve curve_Poles 
+- AnimationCurve curve_Linear 
+- ButtonMap slowMo 
+- ButtonMap sprint 
+- ButtonMap menuRt 
+- int snapDegreesPerFrame 
+- bool _feetThisFrame 
+- float feetOffset 
+- bool _wasOverFlickThresh 
+- BaseController leftController 
+- List<ControllerInfo> controllerInfos 
+- bool _initialViveRtTouchClick 
+- bool _lockViveJump 
+- AnimationCurve JumpCurve 
+- GameObject menu_UI_Left 
+- GameObject menu_UI_Right 
+- Control_UI_PopUpMenu popUp_UI_Left 
+- Control_UI_PopUpMenu popUp_UI_Right 
+- BaseController rightController 
+- bool menu_Left_Active 
+- bool lockMenus 
+- int _fixedCount 
+- float _time 
+- float _deltaTime 
+- float _realTime 
+- bool _runFixedUpdates 
+- bool _ballLocoEnabled 
+- bool CooledRotation { get; }
+- bool CooledJogTog { get; }
+- bool menu_Right_Active 
+- Transform vrRoot 
+- float _turnVel 
+- bool locoEnabled 
+- float currentMaxVelocity 
+- Vector2 _currentJerk 
+- Vector2 _currentAcceleration 
+- Vector2 _currentVelocity 
+- VertState vertState 
+- bool primaryEnabled 
+- float brakingMult 
+- float sharpness 
+- float dragPerSec 
+- float maxJounce 
+- float maxJerk 
+- float maxAcceleration 
+- TraversalState travState 
+- float maxVelocity 
+- bool doubleJump 
+- bool autoLiftLegs 
+- bool isRightHanded 
+- bool slowMoEnabled 
+- bool turnEnabled 
+- bool crouchEnabled 
+- bool jumpEnabled 
+- bool quickmenuEnabled 
